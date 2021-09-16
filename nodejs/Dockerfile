@@ -3,7 +3,7 @@ FROM        node:current-buster-slim
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
 RUN         apt update \
-            && apt -y install iproute2 git python3 ca-certificates tzdata dnsutils build-essential \
+            && apt -y install iproute2 git \
             && useradd -m -d /home/container container
 
 USER        container
