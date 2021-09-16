@@ -1,14 +1,14 @@
-name: Build nodejs
+name: Build java_8
 on:
   push:
     branches:
       - master
     paths:
-      - nodejs/*
+      - java_8/*
       - entrypoint.sh
 jobs:
   push:
-    name: "images:nodejs"
+    name: "images:java_8"
     runs-on: self-hosted
     strategy:
       fail-fast: false
@@ -26,8 +26,8 @@ jobs:
       - uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./nodejs/Dockerfile
+          file: ./java_8/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/hwalker928/images:nodejs
+            ghcr.io/hwalker928/images:java_8

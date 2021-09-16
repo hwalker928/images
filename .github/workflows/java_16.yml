@@ -5,6 +5,7 @@ on:
       - master
     paths:
       - java_16/*
+      - entrypoint.sh
 jobs:
   push:
     name: "images:java_16"
