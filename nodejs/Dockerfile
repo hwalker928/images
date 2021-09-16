@@ -1,10 +1,9 @@
-FROM        node:current-buster-slim
+FROM        node:current-alpine
 
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
-RUN         apt update \
-            && apt -y install iproute2 git \
-            && useradd -m -d /home/container container
+RUN         apk add --update --no-cache git \
+            && adduser -D -h /home/container container
 
 USER        container
 ENV         USER=container HOME=/home/container
