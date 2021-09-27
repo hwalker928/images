@@ -1,4 +1,4 @@
-FROM        node:13
+FROM        node:13-alpine
 
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
