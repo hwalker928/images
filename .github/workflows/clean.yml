@@ -1,4 +1,4 @@
-name: Build java_16
+name: Build clean
 on:
   schedule:
     - cron: "0 0 * * 1"
