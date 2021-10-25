@@ -1,6 +1,6 @@
 FROM        adoptopenjdk/openjdk16:alpine-jre
 
-LABEL       author="Harry W." maintainer="images@harryw.link"
+LABEL       author="Harry W" maintainer="images@harryw.link"
 
 RUN         adduser -D -h /home/container container
 
