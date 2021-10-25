@@ -9,7 +9,5 @@ USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
-COPY        ./clean.sh /clean.sh
 COPY        ./entrypoint.sh /entrypoint.sh
-CMD         ["/bin/ash", "/clean.sh"]
 CMD         ["/bin/ash", "/entrypoint.sh"]
