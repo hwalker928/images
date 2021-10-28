@@ -2,7 +2,7 @@ FROM        adoptopenjdk/openjdk8:alpine-jre
 
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
-RUN         apk add --update --no-cache lolcat \
+RUN         apk add --update --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing lolcat \
             && adduser -D -h /home/container container
 
 USER        container
