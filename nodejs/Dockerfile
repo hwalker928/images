@@ -2,7 +2,7 @@ FROM        node:current-alpine
 
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
-RUN         apk add --update --no-cache git \
+RUN         apk add --update --no-cache git lolcat \
             && adduser -D -h /home/container container
 
 USER        container

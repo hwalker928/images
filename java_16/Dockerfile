@@ -2,7 +2,8 @@ FROM        adoptopenjdk/openjdk16:alpine-jre
 
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
-RUN         adduser -D -h /home/container container
+RUN         apk add --update --no-cache lolcat \
+            && adduser -D -h /home/container container
 
 USER        container
 ENV         USER=container HOME=/home/container
