@@ -1,13 +1,14 @@
-FROM        adoptopenjdk/openjdk16:alpine-jre
+FROM        openjdk:16-slim
 
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
-RUN         apk add --update --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing lolcat \
-            && adduser -D -h /home/container container
+RUN 		    apt-get update -y \
+ 			      && apt-get install -y lolcat iproute2 \
+ 			      && useradd -d /home/container -m container
 
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
 COPY        ./../entrypoint.sh /entrypoint.sh
-CMD         ["/bin/ash", "/entrypoint.sh"]
+CMD         ["/bin/bash", "/entrypoint.sh"]

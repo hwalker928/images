@@ -1,4 +1,4 @@
-FROM        openjdk:8-slim
+FROM        openjdk:11-slim
 
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
