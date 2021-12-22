@@ -2,7 +2,7 @@
 cd /home/container
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 MODIFIED_STARTUP=$(echo -e ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')
-echo "
+__promo="
   _               _ _           ___ ___ ___
  | |___ __ ____ _| | |_____ _ _/ _ \_  | _ )
  | ' \ V  V / _` | | / / -_) '_\_, // // _ \
@@ -12,5 +12,6 @@ echo "
  | |) / _ \/ _| / / -_) '_|  | || '  \/ _` / _` / -_|_-<
  |___/\___/\__|_\_\___|_|   |___|_|_|_\__,_\__, \___/__/
                                            |___/
-" | lolcat
+"
+echo "$__promo" | lolcat
 eval ${MODIFIED_STARTUP}
