@@ -3,7 +3,7 @@ FROM        openjdk:11-slim
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
 RUN 		    apt-get update -y \
- 			      && apt-get install -y lolcat iproute2 \
+ 			      && apt-get install -y iproute2 \
  			      && useradd -d /home/container -m container
 
 USER        container

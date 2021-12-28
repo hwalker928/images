@@ -2,7 +2,7 @@ FROM        python:3-alpine
 
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
-RUN         apk add --update --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing git lolcat \
+RUN         apk add --update --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing git \
             && adduser -D -h /home/container container
 
 USER        container
