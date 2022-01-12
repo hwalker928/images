@@ -4,9 +4,9 @@ LABEL       author="Harry W." maintainer="images@harryw.link"
 
 RUN 		    apt-get update -y \
  			      && apt-get install -y iproute2 software-properties-common apt-transport-https ca-certificates gnupg \
-            && apt-get install -y openjdk-8-jdk openjdk-16-jdk openjdk-17-jdk \
             && add-apt-repository universe \
             && apt-get update -y \
+            && apt-get install -y openjdk-8-jdk openjdk-16-jdk openjdk-17-jdk \
             && rm -rf /var/lib/apt/lists/* \
             && ln -s /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java /usr/local/bin/java8 \
             && ln -s /usr/lib/jvm/java-16-openjdk-amd64/bin/java /usr/local/bin/java16 \
