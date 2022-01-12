@@ -4,7 +4,7 @@ LABEL       author="Harry W." maintainer="images@harryw.link"
 
 RUN 		    apt-get update -y \
  			      && apt-get install -y iproute2 software-properties-common apt-transport-https ca-certificates gnupg \
-            && add-apt-repository universe \
+            && sed -i "/^# deb.*universe/ s/^# //" /etc/apt/sources.list \
             && apt-get update -y \
             && apt-get install -y openjdk-8-jdk openjdk-16-jdk openjdk-17-jdk \
             && rm -rf /var/lib/apt/lists/* \
