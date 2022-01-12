@@ -3,7 +3,7 @@ FROM        debian:stable-slim
 LABEL       author="Harry W." maintainer="images@harryw.link"
 
 RUN 		    apt-get update -y \
- 			      && apt-get install -y iproute2 python3 software-properties-common apt-transport-https ca-certificates \
+ 			      && apt-get install -y iproute2 software-properties-common apt-transport-https ca-certificates \
             && add-apt-repository -y ppa:openjdk-r/ppa \
             && apt-get update -y \
             && apt-get install -y openjdk-8-jre openjdk-16-jre openjdk-17-jre \
