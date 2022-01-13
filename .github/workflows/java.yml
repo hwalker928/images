@@ -8,6 +8,7 @@ on:
     paths:
       - java/*
       - entrypoint.sh
+      - .github/workflows/java.yml
 jobs:
   push:
     name: "images:java"
@@ -27,7 +28,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: docker/build-push-action@v2
         with:
-          context: /java
+          context: java
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
